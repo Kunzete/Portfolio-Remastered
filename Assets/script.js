@@ -1,8 +1,10 @@
 $(document).ready(function () {
-    $('.preloader').css("opacity", "0")
     setTimeout(function () {
-        $('.preloader').css("display", "none");
-    }, 1100);
+        $('.preloader').css("opacity", "0")
+    }, 1600);
+    setTimeout(function() {
+        $('.preloader').css("display", "none")
+    }, 1900);
 });
 
 $(document).ready(function () {

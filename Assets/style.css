@@ -30,40 +30,27 @@ body {
   transition: all 0.5s ease;
 }
 
-.loader {
-  width: 50px;
+/* HTML: <div class="loader"></div> */
+.loader {    
+  --r1: 154%;
+  --r2: 68.5%;
+  width: 60px;
   aspect-ratio: 1;
-  display: grid;
-  border-radius: 50%;
-  background: linear-gradient(
-        0deg,
-        rgb(0 0 0/50%) 30%,
-        #0000 0 70%,
-        rgb(0 0 0/100%) 0
-      )
-      50%/8% 100%,
-    linear-gradient(90deg, rgb(0 0 0/25%) 30%, #0000 0 70%, rgb(0 0 0/75%) 0)
-      50%/100% 8%;
-  background-repeat: no-repeat;
-  animation: l23 1s infinite steps(12);
+  border-radius: 50%; 
+  background:
+    radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,#269af2 80%),
+    radial-gradient(var(--r1) var(--r2) at bottom,#269af2 79.5%,#0000 80%),
+    radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%,#269af2 80%),
+    #ccc;
+  background-size: 50.5% 220%;
+  background-position: -100% 0%,0% 0%,100% 0%;
+  background-repeat:no-repeat;
+  animation: l9 2s infinite linear;
 }
-.loader::before,
-.loader::after {
-  content: "";
-  grid-area: 1/1;
-  border-radius: 50%;
-  background: inherit;
-  opacity: 0.915;
-  transform: rotate(30deg);
-}
-.loader::after {
-  opacity: 0.83;
-  transform: rotate(60deg);
-}
-@keyframes l23 {
-  100% {
-    transform: rotate(1turn);
-  }
+@keyframes l9 {
+    33%  {background-position:    0% 33% ,100% 33% ,200% 33% }
+    66%  {background-position: -100%  66%,0%   66% ,100% 66% }
+    100% {background-position:    0% 100%,100% 100%,200% 100%}
 }
 
 .dark-theme {
