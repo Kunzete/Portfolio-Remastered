@@ -13,7 +13,6 @@ body {
   background: url("./images/background/bgtwo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: bottom;
   background-attachment: fixed;
   transition: all 0.3s;
 }
@@ -57,7 +56,6 @@ body {
   background: url("./images/background/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: bottom;
   background-attachment: fixed;
   font-family: "Poppins", sans-serif;
   color: black;
