@@ -7,13 +7,11 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 240vh;
   font-family: "Poppins", sans-serif;
   color: white;
   background: url("./images/background/bgtwo.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background-origin: border-box;
   transition: all 0.3s;
 }
 
@@ -54,9 +52,7 @@ body {
 
 .dark-theme {
   background: url("./images/background/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background-size: 100%;
   font-family: "Poppins", sans-serif;
   color: black;
   p {
@@ -185,7 +181,7 @@ nav i:hover {
 }
 
 section {
-  height: 200%;
+  height: 200vh;
   display: flex;
   justify-content: center;
   gap: 50px;
@@ -372,7 +368,7 @@ section {
 
 .right {
   width: clamp(50%, 70%, 100%);
-  height: 200vh; /* Increased the height to ensure enough scrollable content */
+  height: 100vh; /* Increased the height to ensure enough scrollable content */
   margin: 12.3% 0%;
 }
 
@@ -591,7 +587,7 @@ section {
 
 @media (max-width: 1440px) {
   section {
-    padding: 3% 10%;
+    padding: 0% 10%;
   }
   .right .outer-menu .menu {
     width: 80%;
