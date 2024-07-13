@@ -1,16 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const themeToggle = document.querySelector(".themeToggle");
+$(document).ready(function () {
+    const themeToggle = $(".themeToggle");
 
-    themeToggle.addEventListener("click", () => {
-        const body = document.querySelector("body");
+    themeToggle.click(function () {
+        const body = $("body");
 
-        body.classList.toggle("dark-theme");
-        if (themeToggle.classList.contains("bx-moon")) {
-            themeToggle.classList.remove("bx-moon");
-            themeToggle.classList.add("bx-sun");
+        body.toggleClass("dark-theme");
+        if (themeToggle.hasClass("bx-moon")) {
+            themeToggle.removeClass("bx-moon");
+            themeToggle.addClass("bx-sun");
         } else {
-            themeToggle.classList.remove("bx-sun");
-            themeToggle.classList.add("bx-moon");
+            themeToggle.removeClass("bx-sun");
+            themeToggle.addClass("bx-moon");
         }
+    });
+
+    $('.main-carousel').flickity({
+        cellAlign: 'left',
+        contain: true
     });
 });
