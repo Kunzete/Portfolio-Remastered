@@ -18,6 +18,54 @@ body {
   transition: all 0.3s;
 }
 
+.preloader {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  position: fixed;
+  min-width: 100%;
+  background-color: rgb(248, 248, 248);
+  opacity: 1;
+  z-index: 999999999999999999999;
+  transition: all 0.5s ease;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border-radius: 50%;
+  background: linear-gradient(
+        0deg,
+        rgb(0 0 0/50%) 30%,
+        #0000 0 70%,
+        rgb(0 0 0/100%) 0
+      )
+      50%/8% 100%,
+    linear-gradient(90deg, rgb(0 0 0/25%) 30%, #0000 0 70%, rgb(0 0 0/75%) 0)
+      50%/100% 8%;
+  background-repeat: no-repeat;
+  animation: l23 1s infinite steps(12);
+}
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.915;
+  transform: rotate(30deg);
+}
+.loader::after {
+  opacity: 0.83;
+  transform: rotate(60deg);
+}
+@keyframes l23 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
 .dark-theme {
   background: url("./images/background/bg.jpg");
   background-repeat: no-repeat;
@@ -81,23 +129,26 @@ body {
       }
     }
   }
-  .right .content .what-i-do .skill .demo:nth-child(1){
+  .right .content .what-i-do .skill .demo:nth-child(1) {
     background-color: #0073b118;
     border: none;
   }
-  .right .content .what-i-do .skill .demo:nth-child(2){
+  .right .content .what-i-do .skill .demo:nth-child(2) {
     background-color: rgba(255, 127, 80, 0.069);
     border: none;
   }
-  .right .content .what-i-do .skill .demo:nth-child(3){
+  .right .content .what-i-do .skill .demo:nth-child(3) {
     background-color: rgba(215, 0, 215, 0.096);
     border: none;
   }
-  .right .content .what-i-do .skill .demo:nth-child(4){
+  .right .content .what-i-do .skill .demo:nth-child(4) {
     background-color: #f208330f;
     border: none;
   }
-  .right .content .client .content{
+  .right .content .client .content {
+    background-color: #f3f6f6;
+  }
+  .nav2 {
     background-color: #f3f6f6;
   }
 }
@@ -114,6 +165,23 @@ nav {
   padding: 50px 0px;
   display: grid;
   place-items: end;
+}
+
+.nav2 {
+  display: none;
+  place-items: start;
+  background-color: #1d1d1d;
+  width: 100%;
+  height: 30vh;
+  z-index: 1000000;
+
+  ul {
+    list-style-type: none;
+    li {
+      font-family: "poppins", sans-serif;
+      margin: 1% 10%;
+    }
+  }
 }
 
 nav .hamburger {
@@ -490,7 +558,7 @@ section {
           margin-top: 5px;
           font-family: "Poppins", sans-serif;
         }
-        .content{
+        .content {
           background-color: transparent;
         }
 
@@ -516,8 +584,8 @@ section {
     border-radius: 12px;
     background-color: black;
     padding: 3% 0px 50px 0px;
-    h2{
-    padding: 0% 0px 20px 0px;
+    h2 {
+      padding: 0% 0px 20px 0px;
     }
   }
 
@@ -528,7 +596,7 @@ section {
     display: grid;
     place-items: center;
     align-content: center;
-    img{
+    img {
       max-width: 100%;
       width: 30%;
       height: auto;
@@ -682,7 +750,7 @@ section {
   .right .content .what-i-do .skill .demo .content p {
     font-size: 2vw;
   }
-  .right .content .client .content{
+  .right .content .client .content {
     border-radius: 16px;
   }
 }
@@ -690,35 +758,35 @@ section {
   .right .content .about h2 {
     font-size: 7vw;
   }
-  .right .content .about p{
+  .right .content .about p {
     font-size: 3.5vw;
   }
   .right .content .about h2::after {
     width: 40vw;
     right: -45vw;
   }
-  .right .content .what-i-do h2{
-      font-size: 7vw;
+  .right .content .what-i-do h2 {
+    font-size: 7vw;
   }
   .right .content .what-i-do .skill {
     grid-template-columns: repeat(1, 1fr);
-    .demo{
+    .demo {
       border: 2px solid #212425;
       border-radius: 16px;
       display: flex;
       justify-content: center;
       align-items: start;
-      gap: 10px;  
+      gap: 10px;
 
-      i{
+      i {
         font-size: 8vw;
       }
 
-      .content{
-        h2{
+      .content {
+        h2 {
           font-size: 4vw;
         }
-        p{
+        p {
           font-size: 2.5vw;
         }
       }
