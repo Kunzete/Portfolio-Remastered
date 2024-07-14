@@ -87,10 +87,6 @@ $(document).ready(function () {
         layoutMode: 'fitRows'
     });
     
-    $grid.imagesLoaded().progress(function() {
-        $grid.isotope('layout');
-    });
-
     // filter items on button click
     $('.button-group').on('click', 'button', function () {
         var filterValue = $(this).attr('data-filter');

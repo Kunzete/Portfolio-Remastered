@@ -849,7 +849,7 @@ section {
   }
 }
 
-.right .content{
+.right .content {
   height: auto;
 }
 
@@ -863,10 +863,10 @@ section {
     margin: 3% 0px 5% 0px;
   }
   .button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: start;
+    place-items: start;
   }
   .button {
     display: inline-block;
@@ -884,10 +884,10 @@ section {
     color: rgb(230, 230, 230);
   }
   /* clear fix */
-  
+
   .grid {
     display: grid;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
     max-width: 100%;
     height: auto;
     padding: 5% 0px;
@@ -896,19 +896,19 @@ section {
     content: "";
     clear: both;
   }
-  
+
   .element-item {
-    max-width: 100%;/* Adjust item width to fit 3 per row with gap */
+    max-width: 100%; /* Adjust item width to fit 3 per row with gap */
     margin-bottom: 20px; /* Space between items */
     padding: 15px;
     background-color: #1d1d1d;
     border-radius: 12px;
-    .card{
+    .card {
       display: flex;
       justify-content: start;
       align-items: start;
       gap: 50px;
-      h2{
+      h2 {
         font-size: 20px;
         color: white;
         font-weight: 300;
@@ -916,17 +916,17 @@ section {
       }
     }
   }
-  
+
   .element-item .img {
     width: 40%;
     overflow: hidden;
-    img{
+    img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
-      transition: all .2s;
+      transition: all 0.2s;
     }
-    img:hover{
+    img:hover {
       border-radius: 10px;
       transform: scale(1.2);
     }
@@ -1175,5 +1175,29 @@ section {
 
   .right .content .resume .knowledge .content {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .right .content .work .button-group {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
+    width: 100%;
+    button {
+      font-size: 12px;
+    }
+  }
+  .right .content .work .grid .element-item {
+    margin: 2% auto;
+    padding: 0;
+    .card {
+      gap: 10px;
+      margin: 0% auto;
+      padding: 0;
+      .info a h2{
+        font-size: 12px;
+      }
+      .img{
+        width: 50%;
+      }
+    }
   }
 }
