@@ -1173,6 +1173,10 @@ section {
     width: 40%;
   }
 
+  .right .content .resume .list{
+    grid-template-columns: repeat(1,1fr);
+  }
+
   .right .content .resume .knowledge .content {
     grid-template-columns: repeat(1, 1fr);
   }
