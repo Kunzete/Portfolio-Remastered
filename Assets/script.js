@@ -34,6 +34,7 @@ $(document).ready(function () {
         $('.contact').css("display", "none")
         $('.work').css("display", "block")
         $('.work').css("height", "auto")
+        $('.right .content').css("height", "260vh")
         $('#about').removeClass('active')
         $('#resume').removeClass('active')
         $('#contact').removeClass('active')
@@ -71,7 +72,7 @@ $(document).ready(function () {
         $('.resume').css("display", "none");
         $('.contact').css("display", "none")
         $('.work').css("display", "block")
-        $('.work').css("height", "200vh")
+        $('.right .content').css("height", "260vh")
     })
 
     $('#contact2').click(function () {
@@ -80,11 +81,14 @@ $(document).ready(function () {
         $('.resume').css("display", "none");
         $('.contact').css("display", "block")
     })
-
-    // init Isotope
+    
     var $grid = $('.grid').isotope({
         itemSelector: '.element-item',
         layoutMode: 'fitRows'
+    });
+    
+    $grid.imagesLoaded().progress(function() {
+        $grid.isotope('layout');
     });
 
     // filter items on button click

@@ -849,10 +849,13 @@ section {
   }
 }
 
+.right .content{
+  height: auto;
+}
+
 .right .content .work {
   display: none;
   padding: 7%;
-  overflow: hidden;
   h2 {
     font-size: 26px;
     font-weight: 500;
