@@ -71,7 +71,7 @@ $(document).ready(function () {
         $('.resume').css("display", "none");
         $('.contact').css("display", "none")
         $('.work').css("display", "block")
-        $('.work').css("height", "auto")
+        $('.work').css("height", "200vh")
     })
 
     $('#contact2').click(function () {
