@@ -51,6 +51,36 @@ $(document).ready(function () {
         $('#contact').addClass('active')
     })
 
+    //navbar Button
+    $('#about2').click(function () {
+        $('.About-me').css("display", "block");
+        $('.work').css("display", "none");
+        $('.resume').css("display", "none");
+        $('.contact').css("display", "none");
+    })
+
+    $('#resume2').click(function () {
+        $('.About-me').css("display", "none");
+        $('.contact').css("display", "none");
+        $('.work').css("display", "none");
+        $('.resume').css("display", "block");
+    })
+
+    $('#work2').click(function () {
+        $('.About-me').css("display", "none");
+        $('.resume').css("display", "none");
+        $('.contact').css("display", "none")
+        $('.work').css("display", "block")
+        $('.work').css("height", "auto")
+    })
+
+    $('#contact2').click(function () {
+        $('.About-me').css("display", "none");
+        $('.work').css("display", "none");
+        $('.resume').css("display", "none");
+        $('.contact').css("display", "block")
+    })
+
     // init Isotope
     var $grid = $('.grid').isotope({
         itemSelector: '.element-item',
