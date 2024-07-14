@@ -2,9 +2,68 @@ $(document).ready(function () {
     setTimeout(function () {
         $('.preloader').css("opacity", "0")
     }, 1600);
-    setTimeout(function() {
+    setTimeout(function () {
         $('.preloader').css("display", "none")
     }, 1900);
+
+    $('#about').click(function () {
+        $('.About-me').css("display", "block");
+        $('#resume').removeClass('active')
+        $('#contact').removeClass('active')
+        $('#work').removeClass('active')
+        $('.work').css("display", "none");
+        $('#about').addClass('active')
+        $('.resume').css("display", "none");
+        $('.contact').css("display", "none");
+    })
+
+    $('#resume').click(function () {
+        $('.About-me').css("display", "none");
+        $('.contact').css("display", "none");
+        $('#work').removeClass('active')
+        $('.work').css("display", "none");
+        $('#about').removeClass('active')
+        $('#contact').removeClass('active')
+        $('#resume').addClass('active')
+        $('.resume').css("display", "block");
+    })
+
+    $('#work').click(function () {
+        $('.About-me').css("display", "none");
+        $('.resume').css("display", "none");
+        $('.contact').css("display", "none")
+        $('.work').css("display", "block")
+        $('.work').css("height", "auto")
+        $('#about').removeClass('active')
+        $('#resume').removeClass('active')
+        $('#contact').removeClass('active')
+        $('#work').addClass('active')
+    })
+
+    $('#contact').click(function () {
+        $('.About-me').css("display", "none");
+        $('#work').removeClass('active')
+        $('.work').css("display", "none");
+        $('.resume').css("display", "none");
+        $('.contact').css("display", "block")
+        $('#about').removeClass('active')
+        $('#resume').removeClass('active')
+        $('#contact').addClass('active')
+    })
+
+    // init Isotope
+    var $grid = $('.grid').isotope({
+        itemSelector: '.element-item',
+        layoutMode: 'fitRows'
+    });
+
+    // filter items on button click
+    $('.button-group').on('click', 'button', function () {
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+        $('.button-group .button').removeClass('is-checked');
+        $(this).addClass('is-checked');
+    });
 });
 
 $(document).ready(function () {
