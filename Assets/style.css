@@ -11,7 +11,9 @@ body {
   font-family: "Poppins", sans-serif;
   color: white;
   background: url("./images/background/bgtwo.jpg");
-  background-origin: border-box;
+  background-repeat: round;
+  background-size: cover;
+  background-position-y: top;
   transition: all 0.3s;
 }
 
@@ -52,7 +54,9 @@ body {
 
 .dark-theme {
   background: url("./images/background/bg.jpg");
-  background-size: 100%;
+  background-repeat: round;
+  background-size: cover;
+  background-position-y: top;
   font-family: "Poppins", sans-serif;
   color: black;
   p {
