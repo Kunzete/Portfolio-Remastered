@@ -90,10 +90,34 @@ $(document).ready(function () {
     })
 
     $('#work2').click(function () {
+        $('.work').css("display", "block")
         $('.About-me').css("display", "none");
         $('.resume').css("display", "none");
         $('.contact').css("display", "none")
-        $('.work').css("display", "block")
+        var $grid = $(".grid").isotope({
+            itemSelector: ".grid-item",
+            percentPosition: true,
+            masonry: {
+                columnWidth: ".grid-sizer",
+            },
+        });
+        // Ensure Isotope layout is initialized and adjusted
+        $grid.imagesLoaded().progress(function () {
+            $grid.isotope('layout');
+        });
+
+        // Recalculate layout on window resize
+        $(window).resize(function () {
+            $grid.isotope('layout');
+        });
+        // Filter items on button click
+        $('.filters button').click(function () {
+            $('.filters button').removeClass('button-active');
+            $(this).addClass('button-active');
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+        });
+
     })
 
     $('#contact2').click(function () {
@@ -130,4 +154,12 @@ $(document).ready(function () {
             $('.nav2').css("display", 'none');
         }
     });
+
+    $('.nav2 ul li').click(()=>{
+        if ($('.nav2').css("display") === 'none') {
+            $('.nav2').css("display", 'block');
+        } else {
+            $('.nav2').css("display", 'none');
+        }
+    })
 });

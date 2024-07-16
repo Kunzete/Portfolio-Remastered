@@ -188,6 +188,50 @@ body {
       }
     }
   }
+  .right .content .work {
+    .filters button {
+      color: #44566c;
+    }
+
+    .filters .button-active {
+      background-color: #f3f6f6;
+    }
+
+    .grid .grid-item .card {
+      border: none;
+      .info {
+        p {
+          color: #44566c;
+        }
+        h3 {
+          color: #000000;
+          transition: all 0.3s;
+        }
+        h3:hover {
+          color: #fa5252;
+        }
+      }
+    }
+
+    .grid-item:nth-child(2) .card {
+      background-color: #a8a8a853;
+    }
+    .grid-item:nth-child(3) .card {
+      background-color: #4680c853;
+    }
+    .grid-item:nth-child(4) .card {
+      background-color: #cfad1562;
+    }
+    .grid-item:nth-child(5) .card {
+      background-color: #12cd2b53;
+    }
+    .grid-item:nth-child(6) .card {
+      background-color: #0dc5a653;
+    }
+    .grid-item:nth-child(7) .card {
+      background-color: #1bab5c35;
+    }
+  }
 }
 
 header {
@@ -442,8 +486,8 @@ section {
 
 .right .menu {
   max-width: 100%;
-  min-width: 50%;
-  width: 65%;
+  width: fit-content;
+  height: fit-content;
   background: #111111;
   padding: 3%;
   border-radius: 18px;
@@ -476,8 +520,8 @@ section {
   a {
     color: #afafaf;
     text-decoration: none;
-    width: 100px;
-    padding: 10px;
+    width: 80px;
+    height: 80px;
     border-radius: 12px;
     background-color: #212425;
     display: flex;
@@ -958,32 +1002,32 @@ section {
           max-width: 100%;
           height: auto;
           border-radius: 4px;
-          transition: all .2s;
+          transition: all 0.2s;
         }
-        img:hover{
+        img:hover {
           transform: scale(1.06);
         }
       }
       .info {
         width: 100%;
-        p{
+        p {
           font-size: 14px;
           line-height: 21px;
           font-family: "poppins", sans-serif;
           color: #a6a6a6;
         }
-        a{
+        a {
           text-decoration: none;
           color: white;
-          transition: all .2s;
+          transition: all 0.2s;
           font-family: "Poppins", sans-serif;
-          h3{
+          h3 {
             line-height: 44px;
             font-size: 20px;
             font-weight: 500;
           }
         }
-        a:hover{
+        a:hover {
           color: #fa5252;
         }
       }
@@ -1023,18 +1067,12 @@ section {
   section {
     padding: 0% 10%;
   }
-  .right .outer-menu .menu {
-    width: 80%;
-  }
 }
 
 @media (max-width: 1200px) {
   section {
     padding: 3% 3%;
     gap: 30px;
-  }
-  .right .outer-menu .menu {
-    width: 85%;
   }
   .left .inner-left img {
     max-width: 60%;
@@ -1050,7 +1088,7 @@ section {
 }
 
 @media (max-width: 962px) {
-  body{
+  body {
     height: 100dvh;
     background-color: #111111;
     background-image: none;
@@ -1143,7 +1181,7 @@ section {
 }
 
 @media (max-width: 768px) {
-  body{
+  body {
     height: 100dvh;
     background-color: #111111;
     background-image: none;
@@ -1186,24 +1224,24 @@ section {
   .experience {
     margin: 5% 0px;
   }
-  .right .content .work{
-    .heading{
-      h2{
+  .right .content .work {
+    .heading {
+      h2 {
         font-size: 5vw;
       }
     }
-    .filter button{
-      font-size: 5vw;
+    .filters button {
+      font-size: 2.3vw;
     }
   }
 }
 @media (max-width: 465px) {
-  body{
+  body {
     height: 100dvh;
     background-color: #111111;
     background-image: none;
   }
-  section{
+  section {
     height: fit-content;
   }
   .right .content .about h2 {
@@ -1288,6 +1326,91 @@ section {
           width: 100%;
           height: auto;
           border-radius: 0;
+        }
+      }
+    }
+  }
+  .right .content .work {
+    .heading {
+      h2 {
+        font-size: 5vw;
+      }
+    }
+    .filters {
+      display: grid;
+      place-content: start;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .filters button {
+      font-size: 3vw;
+    }
+    .grid {
+      max-width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .grid .grid-item,
+    .grid .grid-sizer {
+      width: 100%;
+      padding: 10px 10px;
+    }
+
+    .grid-item {
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: white;
+      max-width: 100%;
+      height: fit-content;
+      .card {
+        border: 2px solid #212425;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Roboto Slab", sans-serif;
+        padding: 24px;
+        gap: 20px;
+        height: fit-content;
+        .img {
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+          cursor: pointer;
+          border-radius: 4px;
+          img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            transition: all 0.2s;
+          }
+          img:hover {
+            transform: scale(1.06);
+          }
+        }
+        .info {
+          width: 100%;
+          p {
+            font-size: 14px;
+            line-height: 21px;
+            font-family: "poppins", sans-serif;
+            color: #a6a6a6;
+          }
+          a {
+            text-decoration: none;
+            color: white;
+            transition: all 0.2s;
+            font-family: "Poppins", sans-serif;
+            h3 {
+              line-height: 44px;
+              font-size: 20px;
+              font-weight: 500;
+            }
+          }
+          a:hover {
+            color: #fa5252;
+          }
         }
       }
     }
