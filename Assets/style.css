@@ -1564,6 +1564,10 @@ section {
        -moz-border-radius: 0px;
             border-radius: 0px;
   }
+  .dark-theme body{
+    background-color: #ffffff;
+    background-image: none;
+  }
   section {
     padding: 0;
     display: inline-block;
