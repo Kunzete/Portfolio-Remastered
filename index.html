@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mohtashim Khan | Portfolio</title>
     <link rel="stylesheet" href="./Assets/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/isotope-layout@4.3.0/dist/isotope.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -205,7 +198,7 @@
               </div>
             </div>
           </div>
-          <div class="resume resume2"> 
+          <div class="resume resume2">
             <div class="heading">
               <h2>Resume</h2>
             </div>
@@ -291,141 +284,90 @@
             </div>
           </div>
           <div class="work work2">
-            <h2>My Work</h2>
-            <div id="filters" class="button-group">
-              <button class="button is-checked" data-filter="*">
-                show all
-              </button>
-              <button class="button" data-filter=".fullstack">
-                Fullstack Website
-              </button>
-              <button class="button" data-filter=".frontend">
-                Frontend Website
-              </button>
-              <button class="button" data-filter=".backend">
-                Backend Website
-              </button>
+            <div class="heading">
+              <h2>Works</h2>
+            </div>
+            <div class="filters">
+              <button data-filter="*" class="button-active">Show All</button>
+              <button data-filter=".frontend">Frontend</button>
+              <button data-filter=".backend">Backend</button>
+              <button data-filter=".fullstack">Fullstack</button>
             </div>
             <div class="grid">
-              <div class="element-item frontend">
+              <div class="grid-sizer"></div>
+              <div class="grid-item frontend">
                 <div class="card">
                   <div class="img">
-                    <a
-                      href="https://clarins-cosmetics.netlify.app/"
-                      target="_blank"
-                      style="text-decoration: none"
-                    >
-                      <img
-                        src="./Assets/images/work/clarins.png"
-                        alt="Front End Project"
-                      />
+                    <img src="./Assets/images/work/music.png" alt="" />
+                  </div>
+                  <div class="info">
+                    <p>Frontend Website</p>
+                    <a href="https://safalicious.netlify.app/" target="_blank">
+                      <h3>Safalicious</h3>
                     </a>
                   </div>
-                  <div class="info">
-                    <a
-                      href="https://clarins-cosmetics.netlify.app/"
-                      target="_blank"
-                      style="text-decoration: none"
-                      ><h2>Clarins Cosmetics</h2></a
-                    >
-                  </div>
                 </div>
               </div>
-              <div class="element-item frontend">
+              <div class="grid-item fullstack">
                 <div class="card">
                   <div class="img">
-                    <a
-                      href="https://safalicious.netlify.app/"
-                      target="_blank"
-                      style="text-decoration: none"
-                    >
-                      <img
-                        src="./Assets/images/work/music.png"
-                        alt="Front End Project"
-                      />
+                    <img src="./Assets/images/work/courier.png" alt="" />
+                  </div>
+                  <div class="info">
+                    <p>Fullstack Website</p>
+                    <a href="https://swiiftshiip.000webhostapp.com/" target="_blank">
+                      <h3>SwiftShip</h3>
                     </a>
                   </div>
+                </div>
+              </div>
+              <div class="grid-item backend">
+                <div class="card">
+                  <div class="img">
+                    <img src="./Assets/images/work/reelicious.png" alt="" />
+                  </div>
                   <div class="info">
-                    <a
-                      href="https://safalicious.netlify.app/"
-                      target="_blank"
-                      style="text-decoration: none"
-                      ><h2>JavaScript Music Player</h2></a
-                    >
+                    <p>Backend Website</p>
+                    <a href="http://reelicious.onlinewebshop.net/"><h3>Reelicious</h3></a>
                   </div>
                 </div>
               </div>
-              <div class="element-item frontend">
+              <div class="grid-item frontend">
                 <div class="card">
                   <div class="img">
-                    <a
-                      href="https://dentosite.netlify.app/"
-                      target="_blank"
-                      style="text-decoration: none"
-                    >
-                      <img
-                        src="./Assets/images/work/dento.png"
-                        alt="Front End Project"
-                      />
+                    <img src="./Assets/images/work/clarins.png" alt="" />
+                  </div>
+                  <div class="info">
+                    <p>Frontend Website</p>
+                    <a href="https://clarins-cosmetics.netlify.app/" target="_blank">
+                      <h3>Clarins Cosmetics</h3>
                     </a>
                   </div>
-                  <div class="info">
-                    <a
-                      href="https://dentosite.netlify.app/"
-                      target="_blank"
-                      style="text-decoration: none"
-                      ><h2>Dentosite</h2></a
-                    >
-                  </div>
                 </div>
               </div>
-              <div class="element-item frontend">
+              <div class="grid-item frontend">
                 <div class="card">
                   <div class="img">
-                    <a
-                      href="https://clarinsangular.netlify.app/"
-                      target="_blank"
-                      style="text-decoration: none"
-                    >
-                      <img
-                        src="./Assets/images/work/clarinsAngular.png"
-                        alt="Front End Project"
-                      />
+                    <img src="./Assets/images/work/dento.png" alt="" />
+                  </div>
+                  <div class="info">
+                    <p>Frontend Website</p>
+                    <a href="https://dentosite.netlify.app/" target="_blank">
+                      <h3>Dentosite</h3>
                     </a>
                   </div>
-                  <div class="info">
-                    <a
-                      href="https://clarinsangular.netlify.app/"
-                      target="_blank"
-                      style="text-decoration: none"
-                      ><h2>Clarins Cosmetic | Angular</h2></a
-                    >
-                  </div>
                 </div>
               </div>
-              <div class="element-item backend">
+              <div class="grid-item frontend">
                 <div class="card">
                   <div class="img">
-                    <img
-                      src="./Assets/images/work/reelicious.png"
-                      alt="Full Stack Project"
-                    />
+                    <img src="./Assets/images/work/clarinsAngular.png" alt="" />
                   </div>
                   <div class="info">
-                    <h2>Reelicious</h2>
-                  </div>
-                </div>
-              </div>
-              <div class="element-item fullstack">
-                <div class="card">
-                  <div class="img">
-                    <img
-                      src="./Assets/images/work/courier.png"
-                      alt="Backend Project"
-                    />
-                  </div>
-                  <div class="info">
-                    <h2>Courier Managment System</h2>
+                    <p>Frontend Website | Angular</p>
+                    <a href="https://clarinsangular.netlify.app/" target="_blank">
+                      <h3>Clarins Cosmetics</h3>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -456,6 +398,9 @@
         </div>
       </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+    <script src="https://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="./Assets/script.js"></script>
   </body>

@@ -28,13 +28,35 @@ $(document).ready(function () {
         $('.resume').css("display", "block");
     })
 
+
     $('#work').click(function () {
         $('.About-me').css("display", "none");
         $('.resume').css("display", "none");
         $('.contact').css("display", "none")
         $('.work').css("display", "block")
-        $('.work').css("height", "auto")
-        $('.right .content').css("height", "260vh")
+        var $grid = $(".grid").isotope({
+            itemSelector: ".grid-item",
+            percentPosition: true,
+            masonry: {
+                columnWidth: ".grid-sizer",
+            },
+        });
+        // Ensure Isotope layout is initialized and adjusted
+        $grid.imagesLoaded().progress(function () {
+            $grid.isotope('layout');
+        });
+
+        // Recalculate layout on window resize
+        $(window).resize(function () {
+            $grid.isotope('layout');
+        });
+        // Filter items on button click
+        $('.filters button').click(function () {
+            $('.filters button').removeClass('button-active');
+            $(this).addClass('button-active');
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+        });
         $('#about').removeClass('active')
         $('#resume').removeClass('active')
         $('#contact').removeClass('active')
@@ -72,7 +94,6 @@ $(document).ready(function () {
         $('.resume').css("display", "none");
         $('.contact').css("display", "none")
         $('.work').css("display", "block")
-        $('.right .content').css("height", "260vh")
     })
 
     $('#contact2').click(function () {
@@ -81,22 +102,7 @@ $(document).ready(function () {
         $('.resume').css("display", "none");
         $('.contact').css("display", "block")
     })
-    
-    var $grid = $('.grid').isotope({
-        itemSelector: '.element-item',
-        layoutMode: 'fitRows'
-    });
-    
-    // filter items on button click
-    $('.button-group').on('click', 'button', function () {
-        var filterValue = $(this).attr('data-filter');
-        $grid.isotope({ filter: filterValue });
-        $('.button-group .button').removeClass('is-checked');
-        $(this).addClass('is-checked');
-    });
-});
 
-$(document).ready(function () {
     const themeToggle = $(".themeToggle");
 
     themeToggle.click(function () {

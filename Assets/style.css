@@ -10,12 +10,11 @@
 body {
   font-family: "Poppins", sans-serif;
   color: white;
-  background: url("./images/background/bgtwo.jpg");
+  background: url("./images/background/bgtwo.jpg") no-repeat fixed;
   background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  height: auto;
   transition: all 0.3s;
-  height: 250vh;
+  box-sizing: border-box;
 }
 
 .preloader {
@@ -65,8 +64,8 @@ body {
 .dark-theme {
   background: url("./images/background/bg.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
   font-family: "Poppins", sans-serif;
   color: black;
   p {
@@ -242,11 +241,12 @@ nav i:hover {
 }
 
 section {
-  height: 200vh;
   display: flex;
   justify-content: center;
   gap: 50px;
   padding: 3% 10%;
+  max-width: 100%;
+  height: auto; /* Changed from max-content to auto */
 }
 
 .left {
@@ -254,7 +254,7 @@ section {
   min-width: 300px;
   position: sticky;
   top: 0;
-  height: 80vh;
+  height: 120vh; /* Changed from 50vh to auto */
   padding: 12.3% 0%;
   margin: 0% 0px 20% 0px;
 }
@@ -429,7 +429,7 @@ section {
 
 .right {
   width: clamp(50%, 70%, 100%);
-  height: 100vh; /* Increased the height to ensure enough scrollable content */
+  height: auto; /* Changed from 100vh to auto */
   margin: 12.3% 0%;
 }
 
@@ -519,6 +519,8 @@ section {
   background: #111111;
   padding: 0%;
   border-radius: 14px;
+  max-width: 100%;
+  height: auto;
 
   .about {
     width: 100%;
@@ -542,7 +544,7 @@ section {
       top: 30px;
       right: -220px;
       width: 200px;
-      height: 3px;
+      height: 2px;
       border-radius: 50px;
       background-color: rgb(250, 82, 82);
       background: -moz-linear-gradient(
@@ -587,21 +589,22 @@ section {
       gap: 30px;
 
       .demo {
-        padding: 5% 20px 10% 20px;
+        padding: 10% 6%;
         border: 2px solid #212425;
         border-radius: 16px;
         display: flex;
-        justify-content: center;
-        align-items: start;
-        gap: 10px;
-
+        justify-content: end;
+        align-items: stretch;
+        gap: 20px;
         i {
           font-size: 42px;
           margin-top: 5px;
           font-family: "Poppins", sans-serif;
         }
         .content {
+          width: 100%;
           background-color: transparent;
+          padding: 0;
         }
 
         h2 {
@@ -609,6 +612,7 @@ section {
           font-family: "Poppins", sans-serif;
           font-weight: 400;
           width: 100%;
+          line-height: 46px;
         }
         p {
           color: #a6a6a6;
@@ -850,85 +854,139 @@ section {
 }
 
 .right .content {
-  height: auto;
+  padding: 20px;
+  height: fit-content;
 }
 
 .right .content .work {
+  padding: 6%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: fit-content;
   display: none;
-  padding: 7%;
-  h2 {
-    font-size: 26px;
-    font-weight: 500;
-    font-family: "poppins", sans-serif;
-    margin: 3% 0px 5% 0px;
+  .heading {
+    h2 {
+      font-size: 40px;
+      font-weight: 700;
+      font-family: "Roboto Slab", sans-serif;
+      line-height: 60px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 30px;
+      margin-left: 25%;
+      width: 200px;
+      height: 2px;
+      border-radius: 50px;
+      background-color: rgb(250, 82, 82);
+      background: -moz-linear-gradient(
+        90deg,
+        rgba(250, 82, 82, 1) 0%,
+        rgba(221, 36, 118, 1) 100%
+      );
+      background: -webkit-linear-gradient(
+        90deg,
+        rgba(250, 82, 82, 1) 0%,
+        rgba(221, 36, 118, 1) 100%
+      );
+    }
   }
-  .button-group {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: start;
-    place-items: start;
+
+  .filters {
+    margin: 3% 0px;
+    display: flex;
+    justify-content: end;
   }
-  .button {
-    display: inline-block;
-    padding: 0.5em 1em;
+
+  .filters .button-active {
+    color: #fa5252;
+  }
+
+  .filters button {
+    background: none;
     border: none;
+    color: #a6a6a6;
+    padding: 10px 20px;
+    border-radius: 5px;
     font-family: "poppins", sans-serif;
     font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
     cursor: pointer;
-    color: rgb(182, 182, 182);
-    background-color: transparent;
-    border-bottom: 2px solid #272727;
+    position: relative;
   }
-  .button:active,
-  .button.is-checked {
-    color: rgb(230, 230, 230);
-  }
-  /* clear fix */
 
   .grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
     max-width: 100%;
     height: auto;
-    padding: 5% 0px;
+    position: relative;
   }
-  .grid:after {
-    content: "";
-    clear: both;
+  .grid .grid-item,
+  .grid .grid-sizer {
+    width: 50%;
+    padding: 10px 10px;
   }
 
-  .element-item {
-    max-width: 100%; /* Adjust item width to fit 3 per row with gap */
-    margin-bottom: 20px; /* Space between items */
-    padding: 15px;
-    background-color: #1d1d1d;
-    border-radius: 12px;
+  .grid-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: white;
+    max-width: 50%;
+    height: fit-content;
     .card {
+      border: 2px solid #212425;
+      border-radius: 8px;
       display: flex;
-      justify-content: start;
-      align-items: start;
-      gap: 50px;
-      h2 {
-        font-size: 20px;
-        color: white;
-        font-weight: 300;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Roboto Slab", sans-serif;
+      padding: 24px;
+      gap: 20px;
+      height: fit-content;
+      .img {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
         cursor: pointer;
+        border-radius: 4px;
+        img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 4px;
+          transition: all .2s;
+        }
+        img:hover{
+          transform: scale(1.06);
+        }
       }
-    }
-  }
-
-  .element-item .img {
-    width: 40%;
-    overflow: hidden;
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      transition: all 0.2s;
-    }
-    img:hover {
-      border-radius: 10px;
-      transform: scale(1.2);
+      .info {
+        width: 100%;
+        p{
+          font-size: 14px;
+          line-height: 21px;
+          font-family: "poppins", sans-serif;
+          color: #a6a6a6;
+        }
+        a{
+          text-decoration: none;
+          color: white;
+          transition: all .2s;
+          font-family: "Poppins", sans-serif;
+          h3{
+            line-height: 44px;
+            font-size: 20px;
+            font-weight: 500;
+          }
+        }
+        a:hover{
+          color: #fa5252;
+        }
+      }
     }
   }
 }
@@ -992,6 +1050,11 @@ section {
 }
 
 @media (max-width: 962px) {
+  body{
+    height: 100dvh;
+    background-color: #111111;
+    background-image: none;
+  }
   header {
     background-color: #1d1d1d;
     height: 60px;
@@ -1080,11 +1143,10 @@ section {
 }
 
 @media (max-width: 768px) {
-  body {
-    background-position: center;
-  }
-  .dark-theme {
-    background-position: center;
+  body{
+    height: 100dvh;
+    background-color: #111111;
+    background-image: none;
   }
   section {
     display: inline-block;
@@ -1124,8 +1186,26 @@ section {
   .experience {
     margin: 5% 0px;
   }
+  .right .content .work{
+    .heading{
+      h2{
+        font-size: 5vw;
+      }
+    }
+    .filter button{
+      font-size: 5vw;
+    }
+  }
 }
 @media (max-width: 465px) {
+  body{
+    height: 100dvh;
+    background-color: #111111;
+    background-image: none;
+  }
+  section{
+    height: fit-content;
+  }
   .right .content .about h2 {
     font-size: 7vw;
   }
@@ -1173,8 +1253,8 @@ section {
     width: 40%;
   }
 
-  .right .content .resume .list{
-    grid-template-columns: repeat(1,1fr);
+  .right .content .resume .list {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .right .content .resume .knowledge .content {
@@ -1182,7 +1262,7 @@ section {
   }
 
   .right .content .work .button-group {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 0px;
     width: 100%;
     button {
@@ -1196,11 +1276,19 @@ section {
       gap: 10px;
       margin: 0% auto;
       padding: 0;
-      .info a h2{
+      max-width: 100%;
+      height: auto;
+      .info a h2 {
         font-size: 12px;
       }
-      .img{
-        width: 50%;
+      .img {
+        aspect-ratio: 3/2;
+        object-fit: contain;
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 0;
+        }
       }
     }
   }
