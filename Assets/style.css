@@ -332,6 +332,9 @@ body {
     .grid-item:nth-child(7) .card {
       background-color: #1bab5c35;
     }
+    .grid-item:nth-child(8) .card {
+      background-color: #9d216335;
+    }
   }
 }
 
