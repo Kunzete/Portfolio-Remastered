@@ -19,7 +19,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: white;
-  background: url("./images/background/bgtwo.jpg") no-repeat fixed;
+  background: url("./images/background/bgtwo.webp") no-repeat fixed;
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
@@ -151,7 +151,7 @@ body {
 }
 
 .dark-theme {
-  background: url("./images/background/bg.jpg");
+  background: url("./images/background/bg.webp");
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
